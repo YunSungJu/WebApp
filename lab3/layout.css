@@ -1,13 +1,17 @@
-* :hover , :not(div){
+* * * :not(ul) :hover {
     background-color: #A6CE39;
 }
+
+/* div > *  :not(ul):hover{
+    background-color: #A6CE39;
+} */
 
 body {
     background-image: url(https://selab.hanyang.ac.kr/courses/cse326/2019/labs/images/3/blueTextureBG.jpg);
     margin-left: 10%;
     margin-right: 10%;
     font-family: "Gill Sans", "Verdana", "Sans-serif";
-	color: #3F3D42;
+    color: #3F3D42;
 }
 
 h1, h2 {
@@ -49,7 +53,7 @@ ul {
     border-radius: 15px;
     background-color: #99CCFF;
     padding: 5px;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0px 0px 190px;
     text-align: justify;
     overflow: hidden;
 }
@@ -64,6 +68,7 @@ ul {
 
 #wrapper {
     overflow : hidden;
+    background-color: white;
 }
 
 #left {
@@ -78,8 +83,8 @@ ul {
 
 #right {
     width: -webkit-calc(100% - 190px);
-    /* margin-left: -190px;
-    padding-left: 190px;
-    box-sizing: border-box; */
+    /* margin-left: -190px; */
+    /* padding-left: 190px; */
+    /* box-sizing: border-box; */
     float: right;
 }
