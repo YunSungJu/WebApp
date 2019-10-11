@@ -77,9 +77,9 @@ ul {
 }
 
 #right {
-    width: 100%;
-    margin-left: -190px;
+    width: -webkit-calc(100% - 190px);
+    /* margin-left: -190px;
     padding-left: 190px;
-    box-sizing: border-box;
+    box-sizing: border-box; */
     float: right;
 }
