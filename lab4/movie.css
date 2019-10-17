@@ -1,0 +1,103 @@
+body {
+    background-image: url(background.png);
+    margin: 0px;
+    padding: 0px;
+}
+
+dl, div, p, header{
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+#banner {
+    background-image: url(bannerbg.png);
+    background-repeat: repeat-x;
+    background-size: 100% 50px;
+
+    text-align: center;
+    height: 50px;
+}
+
+header {
+    font-size: 12pt;
+    font-weight: bold;
+    text-shadow: 3px 3px #999999;
+    text-align: center;
+}
+
+main {
+    width: 800px;
+    margin: 0% auto;
+    border: 4px gray solid;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+section {
+    width: 550px;
+    float: left;
+}
+
+section #menu {
+    height: 83px;
+    background-image: url(rbg.png);
+    background-repeat: repeat-x;
+    background-size: 83px 100%;
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+}
+
+section #menu img {
+    vertical-align: bottom;
+}
+
+section article #review {
+    width: 47%;
+    height: 800px;
+    margin: 0px 1%;
+    display: inline-block;
+}
+
+section article #review #box {
+    background-color: #E8DC9B;
+    border: 2px gray solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    overflow: hidden;
+}
+
+#review img {
+    float: left;
+}
+
+#review p:not(#box) {
+    margin: 0px 0px 15pt 0px;
+    overflow: hidden;
+}
+
+#italic {
+    font-style: italic;
+}
+
+aside {
+    width: 250px;
+    background-color: #A2B964;
+    float: right;
+}
+
+aside dl {
+    margin: 10pt;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+}
+
+aside dl dt {
+    font-weight: bold;
+    margin-top: 10pt;
+}
+
+#link {
+    margin: 0px;
+}
