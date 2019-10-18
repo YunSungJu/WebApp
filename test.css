@@ -1,0 +1,40 @@
+input {
+	width: 20px;
+	height: 20px;
+	padding: 0px;
+	border: 1px thick;
+	border-color: black;
+}
+
+#black {
+	background-color: black;
+}
+
+#red {
+	background-color: red;
+}
+
+#orange {
+	background-color: orange;
+}
+
+#yellow {
+	background-color: yellow;
+}
+
+#green {
+	background-color: green;
+}
+
+#royalblue {
+	background-color: royalblue;
+}
+
+#slateblue {
+	background-color: slateblue;
+}
+
+#powderblue {
+	background-color: powderblue;
+}
+

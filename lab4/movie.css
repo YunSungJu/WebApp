@@ -23,6 +23,7 @@ header {
     font-weight: bold;
     text-shadow: 3px 3px #999999;
     text-align: center;
+    
 }
 
 main {
@@ -52,14 +53,23 @@ section #menu img {
     vertical-align: bottom;
 }
 
-section article #review {
+span{
+    height: 83px;
+    margin: auto 0px;
+}
+
+article {
+    overflow: hidden;
+    
+}
+.review {
     width: 47%;
-    height: 800px;
-    margin: 0px 1%;
+    margin: 10px 1%;
+    vertical-align: top;
     display: inline-block;
 }
 
-section article #review #box {
+.review #box {
     background-color: #E8DC9B;
     border: 2px gray solid;
     border-radius: 10px;
@@ -68,11 +78,11 @@ section article #review #box {
     overflow: hidden;
 }
 
-#review img {
+.review img {
     float: left;
 }
 
-#review p:not(#box) {
+.review p:not(#box) {
     margin: 0px 0px 15pt 0px;
     overflow: hidden;
 }
@@ -98,6 +108,24 @@ aside dl dt {
     margin-top: 10pt;
 }
 
+aside ul {
+    list-style: none;
+}
+
 #link {
     margin: 0px;
+}
+
+footer {
+    background-color: #A2B964;
+    padding: 5px;
+    clear: both;
+    text-align: center;
+}
+
+#w3c {
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    opacity: 0.5;
 }
