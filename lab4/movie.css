@@ -1,37 +1,44 @@
 body {
     background-image: url(background.png);
-    margin: 0px;
-    padding: 0px;
-}
-
-dl, div, p, header{
-    font-size: 8pt;
     font-family: Verdana, Tahoma, sans-serif;
-}
-
-#banner {
-    background-image: url(bannerbg.png);
-    background-repeat: repeat-x;
-    background-size: 100% 50px;
-
-    text-align: center;
-    height: 50px;
+    font-size: 8pt;
+    margin: 0%;
+    padding: 0%;
 }
 
 header {
-    font-size: 12pt;
+    text-align: center;
+}
+
+header div {
+    background-image: url(bannerbg.png);
+    background-repeat: repeat-x;
+    height: 50px;
+}
+header div img {
+    height: 50px;
+}
+
+header h1 {
+    font-size: 24pt;
     font-weight: bold;
+<<<<<<< HEAD
+    font-family: Tahoma, Verdana, sans-serif;
+    text-shadow: #999999 3px 3px;
+=======
     text-shadow: 3px 3px #999999;
     text-align: center;
     
+>>>>>>> ae899eea74dc52b37a5f3a806d30c1141c0f8ba8
 }
+
 
 main {
     width: 800px;
-    margin: 0% auto;
+    margin: 0 auto;
     border: 4px gray solid;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: hidden;                      
 }
 
 section {
@@ -39,20 +46,37 @@ section {
     float: left;
 }
 
-section #menu {
-    height: 83px;
+section div:not(#articles) {
+    vertical-align: bottom;
     background-image: url(rbg.png);
     background-repeat: repeat-x;
-    background-size: 83px 100%;
-    color: red;
+    height: 83px;
     font-size: 48pt;
     font-weight: bold;
+    color: red;
 }
 
-section #menu img {
-    vertical-align: bottom;
+section div span {
+    vertical-align: top;                    /**/
 }
 
+<<<<<<< HEAD
+#articles {
+    width: 97%;
+    padding: 3% 1.5%;
+    margin: 0px auto;
+    overflow: hidden;
+}
+article {
+    width: 47%;
+    margin: 0 1.5%;
+    float: left;
+}
+
+article p:nth-of-type(odd) {
+    font-size: 8pt;
+    font-weight: bold;
+=======
 span{
     height: 83px;
     margin: auto 0px;
@@ -70,62 +94,101 @@ article {
 }
 
 .review #box {
+>>>>>>> ae899eea74dc52b37a5f3a806d30c1141c0f8ba8
     background-color: #E8DC9B;
     border: 2px gray solid;
     border-radius: 10px;
-    padding: 5px;
-    margin: 0px 0px 10px 0px;
-    overflow: hidden;
+    padding: 8px;
+    margin: 0px;
 }
+<<<<<<< HEAD
+article p:nth-of-type(odd) img {
+=======
 
 .review img {
+>>>>>>> ae899eea74dc52b37a5f3a806d30c1141c0f8ba8
     float: left;
+    margin: 0px 5px 0px 0px;
 }
 
+<<<<<<< HEAD
+article p:nth-of-type(even) {
+    margin: 10px 0px 20pt 0px;
+    font-style: italic;
+=======
 .review p:not(#box) {
     margin: 0px 0px 15pt 0px;
     overflow: hidden;
+>>>>>>> ae899eea74dc52b37a5f3a806d30c1141c0f8ba8
 }
 
-#italic {
-    font-style: italic;
+article p:nth-of-type(even) img {
+    float: left;
+    margin: 0px 5px 0px 0px;
 }
 
 aside {
     width: 250px;
-    background-color: #A2B964;
     float: right;
+    background-color: #A2B964;
+}
+
+aside div {
+    margin: 0px 0px 10pt 0px;
 }
 
 aside dl {
-    margin: 10pt;
-    font-family: Arial, sans-serif;
+    margin: 0px 10px;
     font-size: 8pt;
+    font-family: Arial, sans-serif;
 }
 
-aside dl dt {
+aside dt {
     font-weight: bold;
-    margin-top: 10pt;
+    margin: 10pt 0pt;
 }
 
 aside ul {
+<<<<<<< HEAD
+    padding: 0px;
+}
+
+aside li {
+    list-style-type: none;
+=======
     list-style: none;
 }
 
 #link {
     margin: 0px;
+>>>>>>> ae899eea74dc52b37a5f3a806d30c1141c0f8ba8
 }
 
 footer {
     background-color: #A2B964;
+<<<<<<< HEAD
+    padding: 1px;
+=======
     padding: 5px;
+>>>>>>> ae899eea74dc52b37a5f3a806d30c1141c0f8ba8
     clear: both;
     text-align: center;
 }
 
+<<<<<<< HEAD
+body > div:not(#content) {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    opacity: 0.5;
+}
+
+
+=======
 #w3c {
     position: fixed;
     right: 0%;
     bottom: 0%;
     opacity: 0.5;
 }
+>>>>>>> ae899eea74dc52b37a5f3a806d30c1141c0f8ba8
