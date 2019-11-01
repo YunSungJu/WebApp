@@ -12,10 +12,14 @@
 		<h1>My Music Page</h1>
 		
 		<!-- Ex 1: Number of Songs (Variables) -->
+		<?php
+			$song_count = 5678;
+		?>
+		
 		<p>
 			I love music.
-			I have 1234 total songs,
-			which is over 123 hours of music!
+			I have <?= $song_count ?> total songs,
+			which is over <?= (int) ($song_count / 10) ?> hours of music!
 		</p>
 
 		<!-- Ex 2: Top Music News (Loops) -->
@@ -24,23 +28,46 @@
 			<h2>Billboard News</h2>
 		
 			<ol>
-			    <li><a href="https://www.billboard.com/archive/article/201910">2019-11</a></li>
-				<li><a href="https://www.billboard.com/archive/article/201910">2019-10</a></li>
-				<li><a href="https://www.billboard.com/archive/article/201909">2019-09</a></li>
-				<li><a href="https://www.billboard.com/archive/article/201908">2019-08</a></li>
-				<li><a href="https://www.billboard.com/archive/article/201907">2019-07</a></li>
+				<?php 
+					$news_pages = $_GET["news_pages"]; 
+					if (!isset($_GET["news_pages"])) {
+				?>
+			    	<li><a href="https://www.billboard.com/archive/article/201911">2019-11</a></li>
+					<li><a href="https://www.billboard.com/archive/article/201910">2019-10</a></li>
+					<li><a href="https://www.billboard.com/archive/article/201909">2019-09</a></li>
+					<li><a href="https://www.billboard.com/archive/article/201908">2019-08</a></li>
+					<li><a href="https://www.billboard.com/archive/article/201907">2019-07</a></li>
+				<?php } else { 
+					for($i=0; $i<$news_pages; $i++){ ?>
+						<li><a href="https://www.billboard.com/archive/article/<?=201911-$i?>">2019-<?=11-$i?></a></li>
+				<?php
+					}
+				} 
+				?>
 			</ol>
 		</div>
 
 		<!-- Ex 4: Favorite Artists (Arrays) -->
 		<!-- Ex 5: Favorite Artists from a File (Files) -->
+		<?php
+			$artists = array()
+		?>
 		<div class="section">
 			<h2>My Favorite Artists</h2>
 		
 			<ol>
-				<li>Guns N' Roses</li>
-				<li>Green Day</li>
-				<li>Blink182</li>
+				<?php 
+					foreach (file("favorite.txt") as $name){
+						?>
+						<li><?= $name ?></li>
+				<?php
+					}
+					for($i=0; $i<count($artists);$i++){
+				?>
+						<li><?= $artists[$i] ?></li>
+				<?php
+					}
+				?>
 			</ol>
 		</div>
 		
