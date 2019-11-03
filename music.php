@@ -77,27 +77,47 @@
 			<h2>My Music and Playlists</h2>
 
 			<ul id="musiclist">
-				<li class="mp3item">
-					<a href="lab5/musicPHP/songs/paradise-city.mp3">paradise-city.mp3</a>
-				</li>
 				
-				<li class="mp3item">
-					<a href="lab5/musicPHP/songs/basket-case.mp3">basket-case.mp3</a>
-				</li>
+				<?php 
+					$list = glob("lab5/musicPHP/songs/*.mp3");
+					for ($i=0; $i<count($list); $i++){
+						$list_with_size[$list[$i]] = filesize($list[$i]);
+						arsort($list_with_size);
+					}
 
-				<li class="mp3item">
-					<a href="lab5/musicPHP/songs/all-the-small-things.mp3">all-the-small-things.mp3</a>
-				</li>
+					foreach ($list_with_size as $key => $value) {
+				?>
+						<li class="mp3item">
+						<a href="<?=$list[$i]?>"><?=basename($key)?></a> (<?=(int)($value/1024)?> KB)
+						</li>
+				<?php
+						}
+				?>
+
 
 				<!-- Exercise 8: Playlists (Files) -->
-				<li class="playlistitem">326-13f-mix.m3u:
-					<ul>
-						<li>Basket Case.mp3</li>
-						<li>All the Small Things.mp3</li>
-						<li>Just the Way You Are.mp3</li>
-						<li>Pradise City.mp3</li>
-						<li>Dreams.mp3</li>
-					</ul>
+				<?php 
+					$list = glob("lab5/musicPHP/songs/*.m3u");
+					rsort($list);
+					for ($i=0; $i<count($list); $i++){
+				?>
+					<li class="playlistitem"><?=basename($list[$i])?>:
+						<ul>
+						<?php
+							$text = file($list[$i]);
+							shuffle($text);
+							for ($j=0; $j<count($text); $j++){
+								if (strpos($text[$j],"#") === false){
+						?>
+									<li><?=$text[$j]?></li>
+						<?php
+								}
+							}
+						?>
+						</ul>
+				<?php
+					}
+				?>		
 			</ul>
 		</div>
 
