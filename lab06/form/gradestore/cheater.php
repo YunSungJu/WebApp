@@ -56,27 +56,30 @@
 		
 		<!-- Ex 2: display submitted data -->
 		<ul> 
-			<li>Name: </li>
-			<li>ID: </li>
+			<li>Name: <?=$_POST['Name'] ?></li>
+			<li>ID: <?=$_POST['ID']?></li>
 			<!-- use the 'processCheckbox' function to display selected courses -->
-			<li>Course: </li>
-			<li>Grade: </li>
-			<li>Credit </li>
+
+			<li>Course: <?=processCheckbox(array("CSE326", "CSE107", "CSE603", "CIN870"))?></li>
+			<li>Grade: <?=$_POST['Grade']?></li>
+			<li>Credit Card: <?=$_POST['CreditNum']?> (<?=$_POST['Card']?>) </li>
 		</ul>
 		
-		<!-- Ex 3 : 
-			<p>Here are all the loosers who have submitted here:</p> -->
+		<!-- Ex 3 :  -->
+			<p>Here are all the loosers who have submitted here:</p>
 		<?php
 			$filename = "loosers.txt";
 			/* Ex 3: 
 			 * Save the submitted data to the file 'loosers.txt' in the format of : "name;id;cardnumber;cardtype".
 			 * For example, "Scott Lee;20110115238;4300523877775238;visa"
 			 */
+			$info = $_POST['Name'].";".$_POST['ID'].";".$_POST['CreditNum'].";".$_POST['Card']."\n";
+			file_put_contents($filename, $info, FILE_APPEND);
 		?>
 		
 		<!-- Ex 3: Show the complete contents of "loosers.txt".
 			 Place the file contents into an HTML <pre> element to preserve whitespace -->
-
+		<pre><?=file_get_contents($filename)?></pre>
 		
 		<?php
 		# }
@@ -90,7 +93,15 @@
 			 * collects all the selected checkboxes into a single string with comma separation.
 			 * For example, "cse326, cse603, cin870"
 			 */
-			function processCheckbox($names){ }
+			function processCheckbox($names){
+				$result = "";
+				for ($i=0; $i<count($names); $i++) {
+					if (isset($_POST[$names[$i]])){
+						$result = $result . $names[$i] . " ";
+					}
+				}
+				return $result;
+			}
 		?>
 		
 	</body>
