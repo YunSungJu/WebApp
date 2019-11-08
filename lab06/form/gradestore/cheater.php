@@ -12,43 +12,44 @@
 		# Check the existence of each parameter using the PHP function 'isset'.
 		# Check the blankness of an element in $_POST by comparing it to the empty string.
 		# (can also use the element itself as a Boolean test!)
-		# if (){
+		if (!isset($_POST['Name']) or !isset($_POST['ID']) or !isset($_POST['Grade']) or !isset($_POST['CreditNum']) or !$_POST['Card']){
 		?>
 
-		<!-- Ex 4 : 
-			Display the below error message : 
+		<!-- Ex 4 :  -->
+			<!-- Display the below error message :  -->
 			<h1>Sorry</h1>
-			<p>You didn't fill out the form completely. Try again?</p>
-		--> 
+			<p>You didn't fill out the form completely. <a href="gradestore.html">Try again?</a></p>
+		 
 
 		<?php
+		
 		# Ex 5 : 
 		# Check if the name is composed of alphabets, dash(-), ora single white space.
-		# } elseif () { 
+		} elseif (!preg_match("/^[a-zA-Z]+(([ -][a-zA-Z ])?[a-zA-Z]*)*$/",$_POST['Name'])) { 
 		?>
 
-		<!-- Ex 5 : 
-			Display the below error message : 
+		<!-- Ex 5 :  -->
+			<!-- Display the below error message :  -->
 			<h1>Sorry</h1>
-			<p>You didn't provide a valid name. Try again?</p>
-		--> 
+			<p>You didn't provide a valid name. <a href="gradestore.html">Try again?</a></p>
+		 
 
 		<?php
 		# Ex 5 : 
 		# Check if the credit card number is composed of exactly 16 digits.
 		# Check if the Visa card starts with 4 and MasterCard starts with 5. 
-		# } elseif () {
+		} elseif (!preg_match("/^[4|5][0-9]{15}$/", $_POST['CreditNum']) ) {
 		?>
 
-		<!-- Ex 5 : 
-			Display the below error message : 
+		<!-- Ex 5 :  -->
+			<!-- Display the below error message :  -->
 			<h1>Sorry</h1>
-			<p>You didn't provide a valid credit card number. Try again?</p>
-		--> 
+			<p>You didn't provide a valid credit card number. <a href="gradestore.html">Try again?</a></p>
+		 
 
 		<?php
 		# if all the validation and check are passed 
-		# } else {
+		} else {
 		?>
 
 		<h1>Thanks, looser!</h1>
@@ -82,7 +83,7 @@
 		<pre><?=file_get_contents($filename)?></pre>
 		
 		<?php
-		# }
+		}
 		?>
 		
 		<?php
@@ -103,6 +104,5 @@
 				return $result;
 			}
 		?>
-		
 	</body>
 </html>
