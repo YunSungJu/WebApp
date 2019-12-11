@@ -79,10 +79,10 @@
 			<ul id="musiclist">
 				
 				<?php 
-					$list = glob("lab5/musicPHP/songs/*.mp3");
+					$list = glob("musicPHP/songs/*.mp3");
 					for ($i=0; $i<count($list); $i++){
 						$list_with_size[$list[$i]] = filesize($list[$i]);
-						arsort($list_with_size);
+						arsort($list_with_size); //asort vs sort     asort: key&value 유지, sort: key고정, value만 정렬
 					}
 
 					foreach ($list_with_size as $key => $value) {

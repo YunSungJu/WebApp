@@ -24,10 +24,10 @@
 		<?php
 		
 		# Ex 5 : 
-		# Check if the name is composed of alphabets, dash(-), ora single white space.
+		# Check if the name is composed of alphabets, dash(-), or a single white space.
 		} elseif (!preg_match("/^[a-zA-Z]+(([ -][a-zA-Z ])?[a-zA-Z]*)*$/",$_POST['Name'])) { 
 		?>
-
+/
 		<!-- Ex 5 :  -->
 			<!-- Display the below error message :  -->
 			<h1>Sorry</h1>
