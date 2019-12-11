@@ -29,35 +29,23 @@ if (!file_exists($BOOKS_FILE)) {
 	die("ERROR 500: Server error - Unable to read input file: $BOOKS_FILE");
 }
 
-$xmldoc = new DomDocument('1.0', 'UTF-8'); 
-$books_tag = $xmldoc->createElement('books'); 
-$xmldoc->appendChild($books_tag);
+header("Content-type: application/xml");
+
+print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+print "<books>\n";
+
 
 $lines = file($BOOKS_FILE);
 for ($i = 0; $i < count($lines); $i++) {
-	list($title, $author, $bookCategory, $year, $price) = explode("|", trim($lines[$i]));
-	if ($bookCategory == $category) {
-		
-		$book_tag = $xmldoc->createElement('book');
-		$books_tag->appendChild($book_tag);
-		$book_tag->setAttribute("category", "$category");
-		
-		$titleElement = $xmldoc->createElement('title' , "$title");
-		
-		$authorElement = $xmldoc->createElement('author', "$author");
-	
-		$yearElement = $xmldoc->createElement('year', "$year");
-		
-		$priceElement = $xmldoc->createElement('price', "$price");
-		
-		$book_tag->appendChild($titleElement);
-		$book_tag->appendChild($authorElement);
-		$book_tag->appendChild($yearElement);
-		$book_tag->appendChild($priceElement);		
+	list($title, $author, $book_category, $year, $price) = explode("|", trim($lines[$i]));
+	if ($book_category == $category) {
+		print "\t<book category=\"$category\">\n";
+		print "\t\t<title>$title</title>\n";
+		print "\t\t<author>$author</author>\n";
+		print "\t\t<year>$year</year>\n";
+		print "\t\t<price>$price</price>\n";
+		print "\t</book>\n";		
 	}
 }
-
-header("Content-type: application/xml");
-$xml = $xmldoc->saveXML(); 
-print $xml; 
+print "</books>";
 ?>

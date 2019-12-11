@@ -31,24 +31,28 @@ if (!file_exists($BOOKS_FILE)) {
 
 header("Content-type: application/json");
 
+print "{\n  \"books\": [\n";
+
 // write a code to : 
 // 1. read the "books.txt"
 // 2. search all the books that matches the given category 
 // 3. generate the result in JSON data format 
-
-
 $lines = file($BOOKS_FILE);
-$result = array("books"=>array());
-
+$books = array();
 for ($i = 0; $i < count($lines); $i++) {
-	list($title, $author, $bookCategory, $year, $price) = explode("|", trim($lines[$i]));
-	if ($bookCategory == $category) {
-		
-		$book = array("category"=>$bookCategory, "title"=>$title , "author"=>$author , "year"=>$year , "price"=>$price);
-		array_push($result['books'], $book);
+	list($title, $author, $book_category, $year, $price) = explode("|", trim($lines[$i]));
+	if ($book_category == $category) {
+		$books[] = "\t{\"category\": \"$category\", \"title\": \"$title\", \"author\": \"$author\", \"year\": $year, \"price\": $price}";
 	}
-};
-	 
-header("Content-type: application/json");
-print json_encode($result, JSON_PRETTY_PRINT);
+}
+for ($i = 0; $i < count($books); $i++) {
+	print "$books[$i]";
+	if ($i < count($books)-1) {
+		print ",\n";
+	} else {
+		print "\n";
+	}
+}
+print "  ]\n}\n";
+
 ?>
